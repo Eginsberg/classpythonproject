@@ -18,15 +18,15 @@ def make_mask(rows, columns, stripe_width):
                 # The % 2 says whether it is an even or odd stripe
                 
                 # Even stripe
-                image[row][column] = [255, 127, 127, 0] # pale red, alpha=0
+                image[row][column] = [0, 127, 127, 0] # pale red, alpha=0
             
             else:
                 # Odd stripe
-                image[row][column] = [255, 0, 255, 255] # magenta, alpha=255
+                image[row][column] = [0, 255, 122, 122] # magenta, alpha=255
     return image
     
 if __name__ == "__main__":
-    image = make_mask(100,100,20)
+    image = make_mask(200,200,5)
     
     fig, ax = plt.subplots(1, 1)
     ax.imshow(image)
